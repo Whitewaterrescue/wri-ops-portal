@@ -4,13 +4,6 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>WRI Operations Platform</title>
-    <script>
-        var APPS_SCRIPT_URL = "https://script.google.com/macros/s/AKfycbwJezyDb9XBHLzL-6dhYLpgf2EfjjIGN5Ir7-0s-VV72e2kstzAl6NzyYc61aAVvhZzMQ/exec";
-
-        // Pass all query parameters straight through to Apps Script
-        var params = window.location.search;
-        window.location.replace(APPS_SCRIPT_URL + params);
-    </script>
     <style>
         * { margin: 0; padding: 0; box-sizing: border-box; }
         body {
@@ -25,61 +18,60 @@
         .container {
             text-align: center;
             padding: 2rem;
+            max-width: 400px;
         }
         .logo {
             font-size: 1.5rem;
             font-weight: 700;
             letter-spacing: 0.05em;
             color: #ffffff;
-            margin-bottom: 1.5rem;
+            margin-bottom: 0.5rem;
         }
-        .spinner {
-            width: 40px;
-            height: 40px;
-            border: 3px solid rgba(255, 255, 255, 0.1);
-            border-top-color: #4fc3f7;
-            border-radius: 50%;
-            animation: spin 0.8s linear infinite;
-            margin: 0 auto 1.5rem;
+        .subtitle {
+            font-size: 0.85rem;
+            color: #64748b;
+            margin-bottom: 2rem;
         }
-        @keyframes spin {
-            to { transform: rotate(360deg); }
-        }
-        .status {
-            font-size: 0.95rem;
-            color: #90a4ae;
-        }
-        .fallback {
-            margin-top: 2rem;
-            display: none;
-        }
-        .fallback a {
-            color: #4fc3f7;
+        .launch-btn {
+            display: inline-block;
+            padding: 16px 48px;
+            background: linear-gradient(135deg, #0066CC, #004C99);
+            color: white;
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+            font-size: 1.1rem;
+            font-weight: 600;
+            border: none;
+            border-radius: 12px;
+            cursor: pointer;
             text-decoration: none;
-            font-size: 0.9rem;
+            transition: transform 0.15s, box-shadow 0.15s;
+            box-shadow: 0 4px 16px rgba(0, 102, 204, 0.3);
         }
-        .fallback a:hover {
-            text-decoration: underline;
+        .launch-btn:hover {
+            transform: translateY(-1px);
+            box-shadow: 0 6px 24px rgba(0, 102, 204, 0.4);
+        }
+        .launch-btn:active {
+            transform: translateY(0);
+        }
+        .hint {
+            margin-top: 1.5rem;
+            font-size: 0.75rem;
+            color: #475569;
         }
     </style>
 </head>
 <body>
     <div class="container">
         <div class="logo">WRI Operations Platform</div>
-        <div class="spinner"></div>
-        <div class="status">Loading operations portal&hellip;</div>
-        <div class="fallback" id="fallback">
-            <a id="fallback-link" href="#">Click here if you are not redirected</a>
-        </div>
+        <div class="subtitle">Whitewater Rescue Institute</div>
+        <a class="launch-btn" id="launchLink" href="#">Open Portal</a>
+        <div class="hint">Tap to launch the operations portal</div>
     </div>
     <script>
-        // Show fallback link after 3 seconds in case redirect is blocked
-        setTimeout(function() {
-            var fallback = document.getElementById("fallback");
-            var link = document.getElementById("fallback-link");
-            link.href = APPS_SCRIPT_URL + window.location.search;
-            fallback.style.display = "block";
-        }, 3000);
+        var APPS_SCRIPT_URL = "https://script.google.com/macros/s/AKfycbwJezyDb9XBHLzL-6dhYLpgf2EfjjIGN5Ir7-0s-VV72e2kstzAl6NzyYc61aAVvhZzMQ/exec";
+        var params = window.location.search;
+        document.getElementById("launchLink").href = APPS_SCRIPT_URL + params;
     </script>
 </body>
 </html>
