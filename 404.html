@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>WRI Operations Platform</title>
+    <script>
+        // Redirect any sub-path back to the main index with query params preserved
+        var params = window.location.search;
+        window.location.replace("/" + "wri-ops-portal/" + params);
+    </script>
+    <style>
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            min-height: 100vh;
+            background: #1a1a2e;
+            color: #e0e0e0;
+            margin: 0;
+        }
+        .container { text-align: center; padding: 2rem; }
+        a { color: #4fc3f7; text-decoration: none; }
+        a:hover { text-decoration: underline; }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <p>Redirecting&hellip;</p>
+        <p><a href="/wri-ops-portal/">Go to WRI Operations Platform</a></p>
+    </div>
+</body>
+</html>
