@@ -1,0 +1,28 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(git -C:*)",
+      "Bash(gh --version:*)",
+      "Bash(winget install:*)",
+      "Bash(export PATH=\"/c/Program Files/GitHub CLI:$PATH\")",
+      "Bash(gh auth status:*)",
+      "Bash(gh auth login:*)",
+      "Bash(git add:*)",
+      "Bash(git commit:*)",
+      "Bash(git branch:*)",
+      "Bash(gh repo create:*)",
+      "Bash(gh api:*)",
+      "Bash(clasp --version:*)",
+      "Bash(clasp push:*)",
+      "Bash(clasp deployments:*)",
+      "Bash(clasp version:*)",
+      "Bash(clasp deploy:*)",
+      "WebFetch(domain:codywri.github.io)",
+      "Bash(git push)",
+      "Bash(npx wrangler:*)",
+      "Bash(curl:*)",
+      "WebFetch(domain:wri-ops-portal.cody-6ec.workers.dev)",
+      "Bash(ls:*)"
+    ]
+  }
+}
